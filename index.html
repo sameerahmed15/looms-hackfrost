@@ -99,9 +99,41 @@
                             <div class="product-cost">
                                 <p>$59.99</p>
                             </div>
-                            <div class="btn btn-secondary view-story-btn ">
+                            <button class="view-story-btn btn btn-secondary" id="show">
                                 <img src="assets/view-icon.png" alt="">
                                 View Story
+                            </button>
+                            <div class="modal" id="modal">
+                                <button id="close">X</button>
+                                <div class="modal-inner">
+                                    <div class="modal-heading">
+                                        <h1>Meet Pranay</h1>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="modal-container-1">
+                                            <div class="modal-container-text" style="margin-right: 2rem;">
+                                                From Kannauj, India, Pranay handcrafts “Attar”, a perfume using an ancient method.
+                                                <br>
+                                                <br>
+                                                This ensures that the Attar is free from any Alcohol or artificial chemicals.
+                                            </div>
+                                            <img src="assets/pranay.png" width="350px" alt="">
+                                        </div>
+                                        <div class="modal-container-1" style="margin-top: 3rem;">
+                                            <img src="assets/attar.png" width="350px" alt="">
+                                            <div class="modal-container-text" style="margin-left: 2rem;">
+                                                <h3>“Recreating the smell of rain on Earth”</h3>
+                                                <br>
+                                                <br>
+                                                Being one of the last places in the world to produce perfume using this technique, the result is 100% pure perfume.
+                                            </div>
+                                        </div>
+                                        <div class="view-products" style="text-align: center; margin-top: 3rem;" >
+                                            <a href="">View All Products by Pranay →</a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -585,5 +617,59 @@ ul {
     flex-wrap: wrap;
     gap: 30px;
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  bottom: 0;
+  left: 50%;
+  z-index: 88;
+  transform: translateX(-50%) translateY(-50%);
+  width: 90%;
+  height: 80%;
+  background-color: white;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+#close {
+  float: right;
+  margin: 10px 10px 0 0;
+  background-color: lightblue;
+  color: white;
+  border: none;
+  padding: 4px 6px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-inner{
+    padding: 5rem;
+    margin: auto;
+    max-width: 1344px;
+
+}
+
+.modal-container-1 {
+    display: flex;
+}
+
+
 </style>
+
+<script>
+    const show = document.getElementById("show");
+
+const modal = document.getElementById("modal");
+
+const close = document.getElementById("close");
+
+show.addEventListener("click", () => {
+  modal.style.display = "block";
+});
+
+close.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+</script>
 </html>
